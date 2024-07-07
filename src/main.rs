@@ -106,7 +106,7 @@ enum PostError {
 
 impl Post {
     fn from_entry(e: Entry, b: &Blog) -> Result<Self, PostError> {
-        let mut url = match &e.links[..] {
+        let url = match &e.links[..] {
             [] => return Err(PostError::Link),
             [single] => &single.href,
             many @ [..] => {
@@ -119,10 +119,7 @@ impl Post {
             }
         }
         .to_owned();
-        // Matt keeter uses relative links here... I'll humor him
-        if !url.starts_with("http") {
-            url = b.url.clone() + "/" + &url;
-        }
+
         Ok(Post {
             title: e.title.ok_or(PostError::Title)?.content,
             url,
