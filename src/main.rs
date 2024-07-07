@@ -60,13 +60,8 @@ impl Blog {
                 }
             };
         }
-        let url = if self.url.starts_with("http") {
-            self.url.clone()
-        } else {
-            format!("https://{}", self.url)
-        };
         let url = if self.feed.starts_with('/') {
-            format!("{}{}", url, self.feed)
+            format!("{}{}", self.url, self.feed)
         } else {
             self.feed.clone()
         };

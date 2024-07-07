@@ -3,18 +3,18 @@ Small RSS scraping program.
 You give it a list of blogs as jsonl:
 
 ```json
-{"title":"Jade", "url":"jade.fyi", "feed":"/rss.xml"}
-{"title":"Brendan Gregg", "url":"www.brendangregg.com/blog", "feed":"/rss.xml"}
-{"title":"Serge Zaitsev", "url":"zserge.com", "feed":"/rss.xml"}
+{"title":"Jade", "url":"https://jade.fyi", "feed":"/rss.xml"}
+{"title":"Brendan Gregg", "url":"https://www.brendangregg.com/blog", "feed":"/rss.xml"}
+{"title":"Serge Zaitsev", "url":"https://zserge.com", "feed":"/rss.xml"}
 ...
 ```
 and run `rssfetch blogs.jsonl > posts.jsonl` to get a list of posts like:
 
 ``` json
-{"title":"Oh no, `git send-email`", "url":"https://jade.fyi/blog/oh-no-git-send-email/", "blog_title":"Jade", "blog_url":"jade.fyi", "date":"2022-04-22"}
-{"title":"Debugging: using rr to deal with unruly children (processes)", "url":"https://jade.fyi/blog/debugging-rr-children/", "blog_title":"Jade", "blog_url":"jade.fyi", "date":"2022-02-24"}
-{"title":"On Transpilers", "url":"https://zserge.com/posts/transpilers/", "blog_title":"Serge Zaitsev", "blog_url":"zserge.com", "date":"2022-07-06"}
-{"title":"Learn a language by writing too many Forths", "url":"https://zserge.com/posts/too-many-forths/", "blog_title":"Serge Zaitsev", "blog_url":"zserge.com", "date":"2022-07-05"}
+{"title":"Oh no, `git send-email`", "url":"https://jade.fyi/blog/oh-no-git-send-email/", "blog_title":"Jade", "blog_url":"https://jade.fyi", "date":"2022-04-22"}
+{"title":"Debugging: using rr to deal with unruly children (processes)", "url":"https://jade.fyi/blog/debugging-rr-children/", "blog_title":"Jade", "blog_url":"https://jade.fyi", "date":"2022-02-24"}
+{"title":"On Transpilers", "url":"https://zserge.com/posts/transpilers/", "blog_title":"Serge Zaitsev", "blog_url":"https://zserge.com", "date":"2022-07-06"}
+{"title":"Learn a language by writing too many Forths", "url":"https://zserge.com/posts/too-many-forths/", "blog_title":"Serge Zaitsev", "blog_url":"https://zserge.com", "date":"2022-07-05"}
 ...
 ```
 
